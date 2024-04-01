@@ -16,14 +16,8 @@ resetLinkText="Reset Search">
             ❤
           </span>
           <div class="stars">
-    <app-star-rating
-    [value]="3"
-    [totalStars]="5"
-    checkedColor="red"
-    uncheckedColor="grey"
-    size="22px"
-    [readonly]="true">
-    </app-star-rating>
+            <star-rating [stars]="food.stars" [size]="1.8" />
+
              </div>
           <div class="product-item-footer">
             <div class="origins">

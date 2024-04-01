@@ -15,14 +15,9 @@ resetLinkText="Back To Homepage">
         <span class="favorite {{food.favorite? '': 'not'}}">❤</span>
       </div>
       <div class="rating">
-        <app-star-rating
-        [value]="3"
-        [totalStars]="5"
-        checkedColor="red"
-        uncheckedColor="grey"
-        size="22px"
-        [readonly]="true">
-        </app-star-rating>      </div>
+        <star-rating [stars]="food.stars" [size]="1.8" />
+
+      </div>
   
       <div class="origins">
         <span *ngFor="let origin of food.origins">

@@ -1,15 +1,7 @@
-<!-- star-rating.component.html -->
-
-<div class="star-rating">
-  <ng-container *ngFor="let star of stars">
-    <div class="star-container" [style.fontSize]="size" [title]="star + 1"
-         [style.color]="star < value ? checkedColor : uncheckedColor"
-         (click)="onClick(star)" *ngIf="!readonly">
-      &#9733;
-    </div>
-    <div class="star-container" [style.fontSize]="size"
-         [style.color]="star < value ? checkedColor : uncheckedColor" *ngIf="readonly">
-      &#9733;
-    </div>
-  </ng-container>
+<div class="container">
+  <img
+  *ngFor="let current of [1, 2, 3, 4, 5]"
+  [src]="getStarImage(current)"
+  [ngStyle]="styles"
+  />
 </div>

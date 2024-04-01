@@ -1,19 +1,5 @@
-/* star-rating.component.css */
-
-.star-rating {
-  display: inline-block;
-}
-
-.star-container {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.star-container:hover {
-  transform: scale(1.2); /* Scale up on hover */
-}
-
-.star {
-  font-size: 24px;
-  transition: color 0.3s ease-in-out; /* Smooth color transition */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 0.4rem;
 }

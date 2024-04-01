@@ -3,30 +3,33 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-star-rating',
+  selector: 'star-rating',
   templateUrl: './star-rating.component.html',
   styleUrls: ['./star-rating.component.css']
 })
 export class StarRatingComponent {
-  @Input() value: number = 0; // Initialize with default value
-  @Input() totalStars: number = 5; // Initialize with default value
-  @Input() checkedColor: string = 'red'; // Initialize with default value
-  @Input() uncheckedColor: string = 'black'; // Initialize with default value
-  @Input() size: string = '22px'; // Initialize with default value
-  @Input() readonly: boolean = false; // Initialize with default value
+  @Input()
+  stars!: number;
 
-  stars: number[] = []; // Initialize stars array
+  @Input()
+  size: number = 1;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    // Generate array of star indices based on totalStars
-    this.stars = Array(this.totalStars).fill(0).map((_, i) => i);
+  get styles() {
+    return {
+      'width.rem': this.size,
+      'height.rem': this.size,
+      'marginRight.rem': this.size / 6,
+    }
   }
 
-  onClick(index: number): void {
-    if (!this.readonly) {
-      this.value = index + 1;
-    }
+  getStarImage(current: number): string{
+    const previousHalf = current - 0.5;
+    const imageName =
+    this.stars >= current
+    ? 'star-full'
+    : this.stars >= previousHalf
+    ? 'star-half'
+    : 'star-empty';
+    return `/assets/stars/${imageName}.svg`;
   }
 }
