@@ -1,0 +1,19 @@
+/* star-rating.component.css */
+
+.star-rating {
+  display: inline-block;
+}
+
+.star-container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.star-container:hover {
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+.star {
+  font-size: 24px;
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
