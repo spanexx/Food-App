@@ -3,11 +3,11 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import userRouter from './src/routers/user.router';
-import foodRouter from './src/routers/food.router';
-import orderRouter from './src/routers/order.router';
+import userRouter from './routers/user.router';
+import foodRouter from './routers/food.router';
+import orderRouter from './routers/order.router';
 
-import { dbConnect } from './src/configs/database.config';
+import { dbConnect } from './configs/database.config';
 dbConnect();
 
 const app = express();
